@@ -1,0 +1,42 @@
+{
+  "plugins": ["prettier"],
+  "extends": ["airbnb", "airbnb-typescript", "prettier"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "rules": {
+    // 自定义你的规则
+    "global-require": 0,
+    "prettier/prettier": "error",
+    "@typescript-eslint/prefer-optional-chain": 0,
+    "@typescript-eslint/no-require-imports": 0,
+    "no-param-reassign": 0,
+    "@typescript-eslint/space-before-blocks": 0,
+    "import/prefer-default-export": 0,
+    "import/extensions": 0,
+    "no-console": 0,
+    "max-len": 0,
+    "no-restricted-syntax": 0, // 语法限制
+    "no-unused-expressions": 0,
+    "@typescript-eslint/no-unused-expressions": 0,
+    "react/no-array-index-key": 0,
+    "react/jsx-props-no-spreading": 0,
+    "no-underscore-dangle": 0,
+    "react/function-component-definition": 0,
+    "jsx-a11y/click-events-have-key-events": 0, // click事件 必须配key的监听 为了不能触发click事件的人考虑 这个先不考虑吧
+    "jsx-a11y/no-static-element-interactions": 0,
+    "@typescript-eslint/no-use-before-define": 0, // 必须在申明之后使用  但是在react hooks里用的方法就比较烦 禁用了
+    "react/require-default-props": 0, // props required ts里就不用了
+    "react/react-in-jsx-scope": 0, // 不需要了 换了个transform
+    "react/button-has-type": 0, // button需要类型
+    "jsx-a11y/no-noninteractive-element-interactions": 0 // click事件 不能在非交互标签上 比如img 语义化的先不考虑吧
+  },
+  "ignorePatterns": ["dist/*", "public/*"],
+  "globals": {} // 声明全局变量
+}

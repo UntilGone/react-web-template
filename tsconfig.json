@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5", // 编译目标
+    "lib": ["dom", "dom.iterable", "esnext"], // 预设运行时
+    "allowJs": true, // 编译过程中是否编译JS文件
+    "skipLibCheck": true, // 跳过申明文件的类型校验
+    "esModuleInterop": true, // ES模块互操作性
+    "allowSyntheticDefaultImports": true, // 允许默认导出 也就是import A from 'a'   = import * as A from 'a'
+    "strict": true, // 严格模式
+    "forceConsistentCasingInFileNames": true, // 强制大小写敏感
+    "noFallthroughCasesInSwitch": true, // switch case中必须带break 不然会报错
+    "module": "esnext", // 模块系统
+    "moduleResolution": "node", // 模块解析  在ts1.6之前使用的'classic' 之后都是node
+    "resolveJsonModule": true, // 解析Json文件
+    "isolatedModules": true, // 孤立模块
+    "noEmit": true, // 禁止编译器生成文件 如js sourceMap的文件 主要是为了配合babel之类的合作
+    "jsx": "react-jsx", // tsx的编译结果 这里如果是preserve则会把tsx编译为jsx 如果选择React则会输出为js文件 也就是React.createElement('')
+    "experimentalDecorators": true, // 支持装饰器
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"] // 设置别名
+    }
+  },
+  "include": ["src/**/*", "./global.d.ts", "webpack/*", "prettier.config.js"], // 声明需要处理的文件 支持正则
+  "exclude": ["node_modules", "build"] // 声明不需要处理的
+  // "files": ["src/index.tsx", "./global.d.ts"] // 声明需要处理的文件 主要是针对少量内容 一般情况下可以使用include 但是不声明会报错
+}

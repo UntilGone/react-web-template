@@ -9,7 +9,6 @@ module.exports = merge(CommonConfig, {
   // source map规则
   devtool: 'eval-cheap-module-source-map', // eval 通过eval的方式执行代码 cheap 只定位行 不定位列 module 展示源码错误位置 source 生成source map
   devServer: {
-    // host: '0.0.0.0',
     port: 3000,
     compress: false, // 代码压缩
     hot: true, // 热更新

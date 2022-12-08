@@ -1,3 +1,1 @@
-export const Root: React.FC = () => {
-  return <div>111</div>;
-};
+export const Root: React.FC = () => <div>111</div>;

@@ -1,14 +1,12 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
-const commonConfig = require('./webpack.common');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin'); // webpack5之后内置了 如果用pnpm的话 可能需要重新装一下
+// eslint-disable-next-line import/no-unresolved
+const TerserPlugin = require('terser-webpack-plugin'); // webpack5内置了 不需要单独装
 const CompressionPlugin = require('compression-webpack-plugin'); // gzip
-
-const BASE_ENV = process.env.BASE_ENV; // 实际意义的环境参数
-const NODE_ENV = process.env.NODE_ENV; // webpack会根据这个变量赋值给mode 也就决定了打包方式
+const commonConfig = require('./webpack.common');
 
 module.exports = merge(commonConfig, {
   mode: 'production', // 生产模式,会开启tree-shaking和压缩代码,以及其他优化

@@ -35,7 +35,8 @@
     "react/require-default-props": 0, // props required ts里就不用了
     "react/react-in-jsx-scope": 0, // 不需要了 换了个transform
     "react/button-has-type": 0, // button需要类型
-    "jsx-a11y/no-noninteractive-element-interactions": 0 // click事件 不能在非交互标签上 比如img 语义化的先不考虑吧
+    "jsx-a11y/no-noninteractive-element-interactions": 0, // click事件 不能在非交互标签上 比如img 语义化的先不考虑吧
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/webpack/*"] }] // webpack里的依赖在DevDependencies里就行了
   },
   "ignorePatterns": ["dist/*", "public/*"],
   "globals": {} // 声明全局变量

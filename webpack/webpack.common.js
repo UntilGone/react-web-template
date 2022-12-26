@@ -71,6 +71,14 @@ module.exports = {
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader, // 打包模式抽离css 抽离的目的是压缩
           'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: ['autoprefixer'],
+              },
+            },
+          },
         ],
       },
       // 这里把css和less拆分的目的是 避免在css中使用less-loader
@@ -88,6 +96,14 @@ module.exports = {
               },
               importLoaders: 3,
               sourceMap: false,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: ['autoprefixer'],
+              },
             },
           },
           'less-loader',

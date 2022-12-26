@@ -20,3 +20,10 @@ stackframe
 scheduler
 events
 core-js-pure
+
+## 运行环境
+
+这里是指搭建时可以正常运行的环境，并不是最低支持
+pnpm 7.9.0
+npm 8.17.0
+node 16.16.0
